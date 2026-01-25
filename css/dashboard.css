@@ -1,0 +1,9 @@
+/* Base Components */
+.dashboard-left {
+    width: 500px;
+    margin-left: 100px;
+}
+
+.dashboard-right {
+    margin-right: 100px;
+}

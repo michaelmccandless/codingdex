@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CodingDex</title>
+
+    <link rel="stylesheet" href="css/main.css">
+    <script type="module" src="js/dashboard.js"></script>
+</head>
+
+<body>
+
+    <header class="frame topbar mb-3 row-left">
+        <h1>Coding<span class="accent-color">Dex</span></h1>
+    </header>
+
+    <main class="dashboard-main-container row-left gap-3 align-start">
+
+        <div class="dashboard-left column-top gap-3">
+            <div class="frame">
+                <h1>Dashboard</h1>
+                <p>This is your <b>Coding<span class="accent-color">Dex</span></b> dashboard. Here you can access
+                    different lessons and practicing materials.</p>
+                <p>To broaden your knowledge and begin a lesson, select <b>Lessons</b>.</p>
+                <p>To apply your skills and test yourself, select <b>Practice</b>.</p>
+            </div>
+            <div id="account-summary-panel" class="frame frame-dark frame-center-heading">
+                <h1>Account Summary</h1>
+                <div class="row-center gap-3">
+                    <p><b>Username:</b><br>synical4</p>
+                    <p><b>Membership:</b><br>Free Tier</p>
+                    <p><b>Lessons Completed:</b><br>5</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-right column-top gap-2 stretch-width">
+            <div id="mastery-progress" class="frame">
+                <div class="row-left mb-2">
+                    <h1 class="text-default">Mastery Progress</h1>
+                    <div class="row-right stretch-width gap-2">
+                        <p class="progress-count text-clear">40/100 Lessons</p>
+                        <p class="progress-percent text-normal text-bold">40%</p>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-bar-fill progress-accent" style="--fill: 40%"></div>
+                </div>
+            </div>
+
+            <div class="row-center gap-2 mb-2">
+                <button id="lessons-page"
+                    class="button-large text-default text-semibold stretch-width justify-center">📚 Lessons</button>
+                <button id="practice-page"
+                    class="button-large text-default text-semibold stretch-width justify-center">🎯 Practice</button>
+            </div>
+
+            <div id="lessons-grid" class="lesson-grid grid-3">
+                <!-- Lesson cards are dynamically added here -->
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="footer column-top align-center gap-1">
+        <div class="row-center gap-1">
+            <a href="#" class="text-xsmall text-muted">Home</a>
+            <a href="#" class="text-xsmall text-muted">Contact</a>
+            <a href="#" class="text-xsmall text-muted">Terms</a>
+            <a href="#" class="text-xsmall text-muted">Privacy</a>
+            <a href="#" class="text-xsmall text-muted">Legal</a>
+            <a href="#" class="text-xsmall text-muted">Credits</a>
+        </div>
+        <p class="text-xsmall">© 2026 Coding<span class="accent-color">Dex</span>. All rights reserved.</p>
+
+    </footer>
+
+</body>
+
+</html>

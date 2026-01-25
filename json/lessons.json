@@ -1,0 +1,55 @@
+{
+    "Variables": [
+
+        {
+            "ID": "IntroToVariables",
+            "Title": "Introduction to Variables",
+            "Content": [
+                {
+                    "type": "paragraph",
+                    "text": "Variables are used to store data."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "They are like a box with a label."
+                }
+            ]
+        },
+        
+        {
+            "ID": "DataTypes",
+            "Title": "Understanding Data Types",
+            "Content": [
+                {
+                    "type": "paragraph",
+                    "text": "Data types define the type of data a variable can hold."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Common data types include integers, strings, and booleans."
+                }
+            ]
+        }
+
+    ],
+    "Functions": [],
+    "ControlFlow": [],
+    "ObjectOrientedProgramming": [],
+    "DataStructures": [],
+    "Algorithms": [],
+    "DebuggingAndTesting": [],
+    "VersionControl": [],
+    "WebDevelopment": [],
+    "Databases": [],
+    "APIsAndWebServices": [],
+    "SoftwareDevelopmentBestPractices": [],
+    "AdvancedTopics": [],
+    "ProjectIdeas": [],
+    "ResourcesAndFurtherReading": [],
+    "Glossary": [],
+    "QuizzesAndExercises": [],
+    "References": [],
+    "About": [],
+    "Contact": [],
+    "Feedback": []
+}

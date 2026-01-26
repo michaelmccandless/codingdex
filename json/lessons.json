@@ -31,25 +31,6 @@
             ]
         }
 
-    ],
-    "Functions": [],
-    "ControlFlow": [],
-    "ObjectOrientedProgramming": [],
-    "DataStructures": [],
-    "Algorithms": [],
-    "DebuggingAndTesting": [],
-    "VersionControl": [],
-    "WebDevelopment": [],
-    "Databases": [],
-    "APIsAndWebServices": [],
-    "SoftwareDevelopmentBestPractices": [],
-    "AdvancedTopics": [],
-    "ProjectIdeas": [],
-    "ResourcesAndFurtherReading": [],
-    "Glossary": [],
-    "QuizzesAndExercises": [],
-    "References": [],
-    "About": [],
-    "Contact": [],
-    "Feedback": []
+    ]
+    
 }

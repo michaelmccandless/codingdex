@@ -6,13 +6,28 @@
     <title>CodingDex</title>
 
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
     <script type="module" src="js/dashboard.js"></script>
 </head>
 
 <body>
 
     <header class="frame topbar row-left">
-        <h1>Coding<span class="accent-color">Dex</span></h1>
+        <h1>Coding<span class="accent-color mr-3">Dex</span></h1>
+
+        <div class="row-center gap-3 ml-3">
+            <a href="#" class="text-large text-normalcolor fancy-link">Dashboard</a>
+            <a href="#" class="text-large text-normalcolor fancy-link">Lessons</a>
+            <a href="#" class="text-large text-normalcolor fancy-link">Practice</a>
+            <div class="dropdown">
+                <a href="#" class="text-large text-normalcolor fancy-link">About</a>
+
+                <div class="dropdown-menu column-top gap-1">
+                    <a href="#" class="menu-button"><span class="material-icons">home</span> About</a>
+                </div>
+            </div>
+        </div>
     </header>
 
     <main class="dashboard-main-container row-left gap-3 align-start">
@@ -40,24 +55,48 @@
                 <div class="row-left mb-2">
                     <h1 class="text-default">Mastery Progress</h1>
                     <div class="row-right stretch-width gap-2">
-                        <p class="progress-count text-clear">40/100 Lessons</p>
-                        <p class="progress-percent text-normal text-bold">40%</p>
+                        <p class="progress-count text-clearcolor">40/100 Lessons</p>
+                        <p class="progress-percent text-normalcolor text-bold">40%</p>
                     </div>
                 </div>
                 <div class="progress-bar">
-                    <div class="progress-bar-fill progress-accent" style="--fill: 40%"></div>
+                    <div class="progress-bar-fill progress-primary" style="--fill: 40%"></div>
                 </div>
             </div>
 
             <div class="row-center gap-2 mb-2">
-                <button id="lessons-page"
-                    class="button-large text-default text-semibold stretch-width justify-center">📚 Lessons</button>
-                <button id="practice-page"
-                    class="button-large text-default text-semibold stretch-width justify-center">🎯 Practice</button>
+                <button id="lessons-page" class="text-default text-semibold stretch-width justify-center">📚 Lessons</button>
+                <button id="practice-page" class="text-default text-semibold stretch-width justify-center">🎯 Practice</button>
             </div>
 
             <div id="lessons-grid" class="lesson-grid grid-3">
                 <!-- Lesson cards are dynamically added here -->
+            </div>
+            
+            <p>Button types:</p>
+            <div class="row-left gap-1 mt-2">
+                <button class="btn">Button</button>
+                <button class="btn btn-primary">Primary Colored Button</button>
+                <button class="btn btn-primary btn-outline">Outlined Primary Colored Button</button>
+                <button class="btn btn-primary btn-transparent">Transparent Primary Colored Button</button>
+            </div>
+            <div class="row-left gap-1">
+                <button class="btn">Button</button>
+                <button class="btn btn-success">Success Colored Button</button>
+                <button class="btn btn-success btn-outline">Outlined Success Colored Button</button>
+                <button class="btn btn-success btn-transparent">Transparent Success Colored Button</button>
+            </div>
+            <div class="row-left gap-1">
+                <button class="btn">Button</button>
+                <button class="btn btn-warning">Warning Colored Button</button>
+                <button class="btn btn-warning btn-outline">Outlined Warning Colored Button</button>
+                <button class="btn btn-warning btn-transparent">Transparent Warning Colored Button</button>
+            </div>
+            <div class="row-left gap-1">
+                <button class="btn">Button</button>
+                <button class="btn btn-error">Error Colored Button</button>
+                <button class="btn btn-error btn-outline">Outlined Error Colored Button</button>
+                <button class="btn btn-error btn-transparent">Transparent Error Colored Button</button>
             </div>
 
         </div>
@@ -66,12 +105,12 @@
 
     <footer class="footer column-top align-center gap-1">
         <div class="row-center gap-1">
-            <a href="#" class="text-xsmall text-muted">Home</a>
-            <a href="#" class="text-xsmall text-muted">Contact</a>
-            <a href="#" class="text-xsmall text-muted">Terms</a>
-            <a href="#" class="text-xsmall text-muted">Privacy</a>
-            <a href="#" class="text-xsmall text-muted">Legal</a>
-            <a href="#" class="text-xsmall text-muted">Credits</a>
+            <a href="#" class="text-xsmall text-mutedcolor">Home</a>
+            <a href="#" class="text-xsmall text-mutedcolor">Contact</a>
+            <a href="#" class="text-xsmall text-mutedcolor">Terms</a>
+            <a href="#" class="text-xsmall text-mutedcolor">Privacy</a>
+            <a href="#" class="text-xsmall text-mutedcolor">Legal</a>
+            <a href="#" class="text-xsmall text-mutedcolor">Credits</a>
         </div>
         <p class="text-xsmall">© 2026 Coding<span class="accent-color">Dex</span>. All rights reserved.</p>
 

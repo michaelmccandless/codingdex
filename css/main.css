@@ -2,17 +2,48 @@
 @import "dashboard.css";
 
 :root {
-    font-size: 16px;
-    font-family: ui-sans-serif, system-ui, sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue';
-
+    --font-sans: ui-sans-serif, system-ui, sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue';
     --box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+
+    font-size: 16px;
+    font-family: var(--font-sans);
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --bg-dark: hsl(207, 19%, 11%);
+        --bg-dark: hsl(212, 17%, 10%);
+        --bg-medium: hsl(212, 18%, 12%);
+        --bg-normal: hsl(212, 18%, 14%);
+
+        --text-normal: hsl(220, 13%, 70%);
+        --text-muted: hsl(221, 9%, 58%);
+        --text-clear: hsla(221, 12%, 70%, 0.7);
+        --text-dark: hsl(237, 65%, 5%);
+
+        --button: hsl(212, 18%, 14%);
+        --button-hover: hsl(212, 11%, 23%);
+
+        --progress-bar: hsl(214, 10%, 31%);
+        --progress-bg: hsla(220, 13%, 70%, 0.1);
+
+        --primary-accent: hsl(235, 100%, 73%);
+        --secondary-accent: hsl(235, 100%, 80%);
+
+        --success: hsl(161, 100%, 30%);
+        --warning: hsl(45, 100%, 40%);
+        --error: hsl(0, 100%, 71%);
+
+        --success-secondary: hsl(161, 75%, 50%);
+        --warning-secondary: hsl(45, 75%, 60%);
+        --error-secondary: hsl(0, 75%, 75%);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg-dark: hsl(213, 17%, 10%);
         --bg-medium: hsl(213, 18%, 12%);
-        --bg-normal: hsl(213, 18%, 15%);
+        --bg-normal: hsl(212, 18%, 14%);
 
         --text-normal: hsl(220, 13%, 70%);
         --text-muted: hsl(221, 9%, 58%);
@@ -31,21 +62,10 @@
         --success: hsl(161, 100%, 30%);
         --warning: hsl(45, 100%, 40%);
         --error: hsl(0, 100%, 71%);
-    }
-}
 
-@media (prefers-color-scheme: light) {
-    :root {
-        --bg-dark: hsl(207, 19%, 11%);
-        --bg-normal: hsl(213, 18%, 12%);
-        --bg-light: hsl(213, 18%, 15%);
-
-        --text-normal: hsl(220, 13%, 70%);
-        --text-muted: hsl(221, 9%, 58%);
-        --text-dark: hsl(237, 65%, 5%);
-
-        --primary-accent: hsl(235, 100%, 73%);
-        --button-hover: hsl(213, 11%, 23%);
+        --success-secondary: hsl(161, 75%, 50%);
+        --warning-secondary: hsl(45, 75%, 60%);
+        --error-secondary: hsl(0, 75%, 75%);
     }
 }
 
@@ -64,6 +84,9 @@ body {
 
     background-color: var(--bg-dark);
     color: var(--text-muted);
+
+    font-size: 16px;
+    font-family: var(--font-sans);
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

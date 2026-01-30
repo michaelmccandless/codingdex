@@ -2,115 +2,122 @@
 <html lang="en">
 
 <head>
+    <!-- Metadata -->
     <meta charset="UTF-8">
+    <meta name="description" content="CodingDex - A coding education platform for learning programming concepts.">
     <title>CodingDex</title>
 
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Inline Scripts -->
+    <script>
+        let data = JSON.parse(localStorage.getItem("savedData"))
+        let documentTheme = "dark"
+        if (data && data.theme) {
+            documentTheme = data.theme
+        }
+        document.documentElement.setAttribute("data-theme", documentTheme)
+    </script>
 
+    <!-- CSS and JavaScript -->
+    <link rel="stylesheet" href="css/main.css">
     <script type="module" src="js/dashboard.js"></script>
+
+    <!-- External Resources -->
+    <script src="https://kit.fontawesome.com/6f9bb4c3bd.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 
-    <header class="frame topbar row-left">
-        <h1>Coding<span class="accent-color mr-3">Dex</span></h1>
+    <header class="frame topbar row-center">
+        <!-- Topbar -->
+        <div class="fill-space">
+            <h1>Coding<span class="accent-color">Dex</span></h1>
+        </div>
 
-        <div class="row-center gap-3 ml-3">
-            <a href="#" class="text-large text-normalcolor fancy-link">Dashboard</a>
-            <a href="#" class="text-large text-normalcolor fancy-link">Lessons</a>
-            <a href="#" class="text-large text-normalcolor fancy-link">Practice</a>
+        <div class="fill-space row-center gap-4">
+            <a href="#" class="text-large textcol-normal fancy-link">Dashboard</a>
+            <a href="#" class="text-large textcol-normal fancy-link">Lessons</a>
+            <a href="#" class="text-large textcol-normal fancy-link">Practice</a>
+        </div>
+
+        <div class="fill-space row-right gap-1">
+            <button id="theme-toggle" class="btn btn-circle circle-xlarge text-large">
+                <i class="fa-solid fa-circle-half-stroke"></i>
+            </button>
             <div class="dropdown">
-                <a href="#" class="text-large text-normalcolor fancy-link">About</a>
+                <button class="btn btn-circle circle-xlarge text-large">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
 
-                <div class="dropdown-menu column-top gap-1">
-                    <a href="#" class="menu-button"><span class="material-icons">home</span> About</a>
+                <div class="dropdown-menu column-top gap-tiny">
+                    <a href="#" class="btn btn-primary btn-transparent text-small row-left gap-2">
+                        <i class="fa-solid fa-user"></i>
+                        Profile
+                    </a>
+                    <a href="#" class="btn btn-primary btn-transparent text-small row-left gap-2">
+                        <i class="fa-solid fa-gear"></i>
+                        Settings
+                    </a>
+                    <a href="#" class="btn btn-primary btn-transparent text-small row-left gap-2">
+                        <i class="fa-solid fa-envelope"></i>
+                        Contact
+                    </a>
+                    <a href="#" class="btn btn-primary btn-transparent text-small row-left gap-2">
+                        <i class="fa-solid fa-bug"></i>
+                        Report a Bug
+                    </a>
+                    <a href="#" class="btn btn-error btn-transparent text-small row-left gap-2">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        Logout
+                    </a>
                 </div>
             </div>
         </div>
+        <!-- End of topbar -->
     </header>
 
-    <main class="dashboard-main-container row-left gap-3 align-start">
+    <main class="dashboard-main-container row-left gap-4 align-start">
 
-        <div class="dashboard-left column-top gap-3">
-            <div class="frame">
-                <h1>Dashboard</h1>
-                <p>This is your <b>Coding<span class="accent-color">Dex</span></b> dashboard. Here you can access
-                    different lessons and practicing materials.</p>
-                <p>To broaden your knowledge and begin a lesson, select <b>Lessons</b>.</p>
-                <p>To apply your skills and test yourself, select <b>Practice</b>.</p>
-            </div>
-            <div id="account-summary-panel" class="frame frame-dark frame-center-heading">
-                <h1>Account Summary</h1>
-                <div class="row-center gap-3">
-                    <p><b>Username:</b><br>synical4</p>
-                    <p><b>Membership:</b><br>Free Tier</p>
-                    <p><b>Lessons Completed:</b><br>5</p>
-                </div>
+        <div class="dashboard-left column-top gap-4">   
+            <div id="changelog" class="frame">
+                <h1>What's New:</h1>
+                <!-- Changelog items are dynamically added here -->
             </div>
         </div>
 
-        <div class="dashboard-right column-top gap-2 stretch-width">
+        <div class="dashboard-right column-top gap-3 stretch-width">
             <div id="mastery-progress" class="frame">
                 <div class="row-left mb-2">
-                    <h1 class="text-default">Mastery Progress</h1>
-                    <div class="row-right stretch-width gap-2">
-                        <p class="progress-count text-clearcolor">40/100 Lessons</p>
-                        <p class="progress-percent text-normalcolor text-bold">40%</p>
+                    <h1 class="text-medium">Mastery Progress</h1>
+                    <div class="row-right stretch-width gap-3">
+                        <p class="progress-count textcol-clear">0/0 Lessons</p>
+                        <p class="progress-percent textcol-normal text-bold">0%</p>
                     </div>
                 </div>
                 <div class="progress-bar">
-                    <div class="progress-bar-fill progress-primary" style="--fill: 40%"></div>
+                    <div class="progress-bar-fill progress-primary" style="--fill: 0%"></div>
                 </div>
             </div>
 
-            <div class="row-center gap-2 mb-2">
-                <button id="lessons-page" class="text-default text-semibold stretch-width justify-center">📚 Lessons</button>
-                <button id="practice-page" class="text-default text-semibold stretch-width justify-center">🎯 Practice</button>
+            <div class="row-center gap-3 mb-2">
+                <a href="#" class="btn pt-2 pb-2 text-medium text-semibold stretch-width justify-center">📚 Lessons</a>
+                <a href="#" class="btn pt-2 pb-2 text-medium text-semibold stretch-width justify-center">🎯 Practice</a>
             </div>
 
             <div id="lessons-grid" class="lesson-grid grid-3">
                 <!-- Lesson cards are dynamically added here -->
             </div>
-            
-            <p>Button types:</p>
-            <div class="row-left gap-1 mt-2">
-                <button class="btn">Button</button>
-                <button class="btn btn-primary">Primary Colored Button</button>
-                <button class="btn btn-primary btn-outline">Outlined Primary Colored Button</button>
-                <button class="btn btn-primary btn-transparent">Transparent Primary Colored Button</button>
-            </div>
-            <div class="row-left gap-1">
-                <button class="btn">Button</button>
-                <button class="btn btn-success">Success Colored Button</button>
-                <button class="btn btn-success btn-outline">Outlined Success Colored Button</button>
-                <button class="btn btn-success btn-transparent">Transparent Success Colored Button</button>
-            </div>
-            <div class="row-left gap-1">
-                <button class="btn">Button</button>
-                <button class="btn btn-warning">Warning Colored Button</button>
-                <button class="btn btn-warning btn-outline">Outlined Warning Colored Button</button>
-                <button class="btn btn-warning btn-transparent">Transparent Warning Colored Button</button>
-            </div>
-            <div class="row-left gap-1">
-                <button class="btn">Button</button>
-                <button class="btn btn-error">Error Colored Button</button>
-                <button class="btn btn-error btn-outline">Outlined Error Colored Button</button>
-                <button class="btn btn-error btn-transparent">Transparent Error Colored Button</button>
-            </div>
-
         </div>
-
+        
     </main>
 
     <footer class="footer column-top align-center gap-1">
         <div class="row-center gap-1">
-            <a href="#" class="text-xsmall text-mutedcolor">Home</a>
-            <a href="#" class="text-xsmall text-mutedcolor">Contact</a>
-            <a href="#" class="text-xsmall text-mutedcolor">Terms</a>
-            <a href="#" class="text-xsmall text-mutedcolor">Privacy</a>
-            <a href="#" class="text-xsmall text-mutedcolor">Legal</a>
-            <a href="#" class="text-xsmall text-mutedcolor">Credits</a>
+            <a href="#" class="text-xsmall textcol-muted">Home</a>
+            <a href="#" class="text-xsmall textcol-muted">Contact</a>
+            <a href="#" class="text-xsmall textcol-muted">Terms</a>
+            <a href="#" class="text-xsmall textcol-muted">Privacy</a>
+            <a href="#" class="text-xsmall textcol-muted">Legal</a>
+            <a href="#" class="text-xsmall textcol-muted">Credits</a>
         </div>
         <p class="text-xsmall">© 2026 Coding<span class="accent-color">Dex</span>. All rights reserved.</p>
 

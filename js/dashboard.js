@@ -3,6 +3,7 @@ import * as main from "./main.js"
 
 // Load JSON Data
 let lessonsJSON = await main.loadJSON("../json/lessons.json")
+let changelogJSON = await main.loadJSON("../json/changelog.json")
 
 // Functions
 function getLessonCardHTML(title, completedLessons, totalLessons) {
@@ -17,13 +18,13 @@ function getLessonCardHTML(title, completedLessons, totalLessons) {
         barColor = "progress-red";
     }
 
-    const lessonCard = `
+    let lessonCard = `
     <div class="frame frame-dark">
         <div class="row-left mb-2">
             <h1 class="text-small">${title}</h1>
-            <div class="row-right stretch-width gap-2 text-small">
-                <p class="progress-count text-clear text-small">${completedLessons}/${totalLessons} Lessons</p>
-                <p class="progress-percent text-normal text-small">${percent}%</p>
+            <div class="row-right stretch-width gap-2">
+                <p class="progress-count textcol-clear text-small">${completedLessons}/${totalLessons} Lessons</p>
+                <p class="progress-percent textcol-normal text-small">${percent}%</p>
             </div>
         </div>
         <div class="progress-bar progress-small">
@@ -35,6 +36,22 @@ function getLessonCardHTML(title, completedLessons, totalLessons) {
     return lessonCard
 }
 
+function getChangeLogHTML(title, changes) {
+    let listItems = ""
+    for (let change of changes) {
+        listItems += `<li class="text-small bulleted-list">${change}</li>`
+    }
+
+    let changeList = `
+    <ul class="frame frame-dark column-top gap-tiny mb-3">
+        <h2 class="textcol-normal text-medium mb-1">${title}</h2>
+        ${listItems}
+    </ul>
+    `
+
+    return changeList
+}
+
 function loadDashboard() {
     // Get Localstorage Data
     let data = main.loadData()
@@ -43,10 +60,10 @@ function loadDashboard() {
     let totalCompletedLessons = 0
 
     // Lessons Cards
-    for (let Topic in lessonsJSON) {
-        let lessonArray = lessonsJSON[Topic]
+    for (let topic in lessonsJSON) {
+        let lessonArray = lessonsJSON[topic]
         
-        let title = Topic
+        let title = topic
         let totalLessons = lessonArray.length
         let completedLessons = 0
         
@@ -77,6 +94,17 @@ function loadDashboard() {
     masteryBar.style.setProperty("--fill", `${masteryPercent}%`)
     masteryPercentText.textContent = `${masteryPercent}%`
     masteryCountText.textContent = `${totalCompletedLessons}/${totalLessonsOverall} Lessons`
+
+    // Change Log
+    let changelogFrame = document.getElementById("changelog")
+    for (let title in changelogJSON.Content) {
+        let changes = changelogJSON.Content[title]
+        let changeLogHTML = getChangeLogHTML(title, changes)
+        changelogFrame.insertAdjacentHTML("beforeend", changeLogHTML)
+    }
+
+    let versionText = `<em class="text-xsmall">Coding<span class="accent-color">Dex</span> v${changelogJSON.Version}</em>`
+    changelogFrame.insertAdjacentHTML("beforeend", versionText)
 }
 
 // On Load

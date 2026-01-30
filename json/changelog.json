@@ -1,0 +1,18 @@
+{
+    "Version": "1.0.0.0",
+    "Content": {
+        "The First Update": [
+            "🎉 Welcome to CodingDex! We're excited to have you on board.",
+            "📚 Added the first set of lessons under <em>Variables</em>.",
+            "🎯 Practice Mode is in the works!"
+        ],
+        "Quality of Life": [
+            "🗃️ Added JSON Importing & Exporting to backup/restore mastery progress.",
+            "🐛 Fixed a bug in the topbar layout."
+        ],
+        "To-Do List": [
+            "📝 Make Lessons selection page.",
+            "📝 Make Practice selection page."
+        ]
+    }
+}

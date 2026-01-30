@@ -1,3 +1,30 @@
+// main.js
+function toggleTheme() {
+    let currentTheme = document.documentElement.getAttribute("data-theme")
+    let newTheme = (currentTheme == "light") ? "dark" : "light"
+    document.documentElement.setAttribute("data-theme", newTheme)
+
+    let data = loadData()
+    data.theme = newTheme
+    saveData(data)
+}
+
+function initializePage() {
+    // Initial Variables
+    let data = loadData()
+    let documentTheme = "dark"
+    if (data && data.theme) {
+        documentTheme = data.theme
+    }
+
+    // Theme Toggle & Applying
+    let themeButton = document.getElementById("theme-toggle")
+    themeButton.addEventListener("click", toggleTheme)
+    document.documentElement.setAttribute("data-theme", documentTheme)
+}
+initializePage()
+
+// Exports
 export async function loadJSON(path) {
     try {
         const response = await fetch(path)
@@ -11,11 +38,13 @@ export async function loadJSON(path) {
 }
 
 export function loadData() {
-    let data = JSON.parse(localStorage.getItem("progress"))
+    let data = JSON.parse(localStorage.getItem("savedData"))
     if (!data) {
         data = {
             "completedLessons": [],
             "autosaves": {},
+            "settings": {},
+            "theme": "light",
         }
     }
 
@@ -23,5 +52,5 @@ export function loadData() {
 }
 
 export function saveData(data) {
-    localStorage.setItem("progress", JSON.stringify(data));
+    localStorage.setItem("savedData", JSON.stringify(data));
 }

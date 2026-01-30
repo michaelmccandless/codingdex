@@ -15,6 +15,25 @@ a {
 }
 a:hover {text-decoration: underline;}
 
+li.bulleted-list {
+    list-style: none;
+    padding-left: 1rem;
+    position: relative;
+}
+li.bulleted-list::before {
+    content: "";
+
+    width: 0.35rem;
+    height: 0.35rem;
+
+    background-color: currentColor;
+    border-radius: 100%;
+
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+}
+
 .fancy-link {
     transition: all 0.3s ease;
     position: relative;
@@ -61,6 +80,11 @@ button, .btn {
     font-family: var(--font-sans);
     box-shadow: var(--box-shadow);
 
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+
     cursor: pointer;
     transition: all 0.3s ease;
 
@@ -96,13 +120,29 @@ button:active, .btn:active {
 
 .btn.btn-transparent {
     --btn-bg: transparent;
-    --btn-bg-hover: transparent;
+    --btn-bg-hover: var(--bg-dark);
     --btn-text: var(--text-normal);
     --btn-text-hover: var(--primary-color);
     --btn-border: none;
 
     box-shadow: none;
 }
+
+.btn.btn-circle {
+    --btn-bg: transparent;
+
+    padding: 0;
+    width: 2rem;
+
+    box-shadow: none;
+    aspect-ratio: 1 / 1;
+    border-radius: 100%;
+}
+.btn-circle.circle-xsmall {width: 1rem;}
+.btn-circle.circle-small {width: 1.5rem;}
+.btn-circle.circle-medium {width: 2rem;}
+.btn-circle.circle-large {width: 2.5rem;}
+.btn-circle.circle-xlarge {width: 3rem;}
 
 .btn-primary {
     --primary-color: var(--primary-accent);
@@ -166,10 +206,10 @@ button:active, .btn:active {
 .topbar {
     height: 4rem;
 
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
 
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 300px;
+    padding-right: 300px;
 
     border-radius: 0;
 }
@@ -252,7 +292,7 @@ button:active, .btn:active {
     transform-origin: top;
     pointer-events: none;
 
-    transition: all 0.15s ease;
+    transition: all 0.3s ease;
 }
 
 .dropdown:hover .dropdown-menu,
@@ -319,9 +359,11 @@ button:active, .btn:active {
 .align-center {align-items: center;}
 .justify-center {display: flex; justify-content: center; align-items: center;}
 
+.gap-tiny {gap: .25rem;}
 .gap-1 {gap: .5rem;}
-.gap-2 {gap: 1rem;}
-.gap-3 {gap: 2rem;}
+.gap-2 {gap: .75rem;}
+.gap-3 {gap: 1rem;}
+.gap-4 {gap: 2rem;}
 
 .mt-1 {margin-top: 0.5rem;}
 .mt-2 {margin-top: 1rem;}
@@ -359,19 +401,20 @@ button:active, .btn:active {
 .padding-2 {padding: 1rem;}
 .padding-3 {padding: 2rem;}
 
+/*.material-icons-outlined {font-size: 1em;}*/
 .text-xsmall {font-size: 0.75rem;}
 .text-small {font-size: 0.875rem;}
-.text-default {font-size: 1rem;}
+.text-medium {font-size: 1rem;}
 .text-large {font-size: 1.125rem;}
 .text-xlarge {font-size: 1.5rem;}
 
 .text-semibold {font-weight: 600;}
 .text-bold {font-weight: bold;}
 
-.text-normalcolor {color: var(--text-normal);}
-.text-mutedcolor {color: var(--text-muted);}
-.text-clearcolor {color: var(--text-clear);}
-.text-darkcolor {color: var(--text-dark);}
+.textcol-normal {color: var(--text-normal);}
+.textcol-muted {color: var(--text-muted);}
+.textcol-clear {color: var(--text-clear);}
+.textcol-dark {color: var(--text-dark);}
 
 .stretch-width {
     width: 100%;
@@ -387,9 +430,13 @@ button:active, .btn:active {
     flex: 1;
 }
 
-.accent-color {color: var(--primary-accent);}
+.fill-space {
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    display: flex;
+    flex: 1;
+}
 
-.material-icons.texticon-1 {font-size: 1rem;}
-.material-icons.texticon-2 {font-size: 1.5rem;}
-.material-icons.texticon-3 {font-size: 2.25rem;}
-.material-icons.texticon-4 {font-size: 3rem;}
+.accent-color {color: var(--primary-accent);}

@@ -2,8 +2,8 @@
 import * as main from "./main.js"
 
 // Load JSON Data
-let lessonsJSON = await main.loadJSON("../json/lessons.json")
-let changelogJSON = await main.loadJSON("../json/changelog.json")
+let lessonsJSON = await main.loadJSON("./json/lessons.json")
+let changelogJSON = await main.loadJSON("./json/changelog.json")
 
 // Functions
 function getLessonCardHTML(title, completedLessons, totalLessons) {

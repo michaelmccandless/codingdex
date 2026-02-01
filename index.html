@@ -32,59 +32,12 @@
 </head>
 
 <body>
-
-    <header class="frame topbar row-center">
-        <!-- Topbar -->
-        <div class="fill-space">
-            <h1>Coding<span class="accent-color">Dex</span></h1>
-        </div>
-
-        <div class="fill-space row-center gap-4">
-            <a href="#" class="text-large textcol-normal fancy-link">Dashboard</a>
-            <a href="#" class="text-large textcol-normal fancy-link">Lessons</a>
-            <a href="#" class="text-large textcol-normal fancy-link">Practice</a>
-        </div>
-
-        <div class="fill-space row-right gap-1">
-            <button id="theme-toggle" class="btn btn-circle circle-xlarge text-large">
-                <i class="fa-solid fa-circle-half-stroke"></i>
-            </button>
-            <div class="dropdown">
-                <button class="btn btn-circle circle-xlarge text-large">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-
-                <div class="dropdown-menu column-top gap-tiny">
-                    <a href="#" class="btn btn-primary btn-transparent text-small row-left gap-2">
-                        <i class="fa-solid fa-user"></i>
-                        Profile
-                    </a>
-                    <a href="#" class="btn btn-primary btn-transparent text-small row-left gap-2">
-                        <i class="fa-solid fa-gear"></i>
-                        Settings
-                    </a>
-                    <a href="#" class="btn btn-primary btn-transparent text-small row-left gap-2">
-                        <i class="fa-solid fa-envelope"></i>
-                        Contact
-                    </a>
-                    <a href="#" class="btn btn-primary btn-transparent text-small row-left gap-2">
-                        <i class="fa-solid fa-bug"></i>
-                        Report a Bug
-                    </a>
-                    <a href="#" class="btn btn-error btn-transparent text-small row-left gap-2">
-                        <i class="fa-solid fa-right-from-bracket"></i>
-                        Logout
-                    </a>
-                </div>
-            </div>
-        </div>
-        <!-- End of topbar -->
-    </header>
+    <div id="header" class="skeleton-v1"></div>
 
     <main class="dashboard-main-container row-left gap-4 align-start">
 
         <div class="dashboard-left column-top gap-4">   
-            <div id="changelog" class="frame">
+            <div id="changelog" class="skeleton-v4 frame">
                 <h1>What's New:</h1>
                 <!-- Changelog items are dynamically added here -->
             </div>
@@ -116,19 +69,7 @@
         
     </main>
 
-    <footer class="footer column-top align-center gap-1">
-        <div class="row-center gap-1">
-            <a href="#" class="text-xsmall textcol-muted">Home</a>
-            <a href="#" class="text-xsmall textcol-muted">Contact</a>
-            <a href="#" class="text-xsmall textcol-muted">Terms</a>
-            <a href="#" class="text-xsmall textcol-muted">Privacy</a>
-            <a href="#" class="text-xsmall textcol-muted">Legal</a>
-            <a href="#" class="text-xsmall textcol-muted">Credits</a>
-        </div>
-        <p class="text-xsmall">© 2026 Coding<span class="accent-color">Dex</span>. All rights reserved.</p>
-
-    </footer>
-
+    <div id="footer" class="skeleton-v1"></div>
 </body>
 
 </html>

@@ -1,6 +1,5 @@
 {
     "Variables": [
-
         {
             "ID": "IntroToVariables",
             "Title": "Introduction to Variables",
@@ -10,18 +9,18 @@
                     "text": "Variables are used to store data."
                 },
                 {
+                    "type": "div"
+                },
+                {
                     "type": "code",
                     "text": "print(\"Hello World!\")"
                 }
             ]
         },
-        
         {
             "ID": "DataTypes",
             "Title": "Understanding Data Types",
             "Content": []
         }
-
     ]
-    
 }

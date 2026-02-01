@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Metadata -->
+    <meta charset="UTF-8">
+    <title>CodingDex</title>
+
+    <!-- Inline Scripts -->
+    <script>
+        let data = JSON.parse(localStorage.getItem("savedData"))
+        let documentTheme = "dark"
+        if (data && data.theme) {
+            documentTheme = data.theme
+        }
+        document.documentElement.setAttribute("data-theme", documentTheme)
+    </script>
+
+    <!-- CSS and JavaScript -->
+    <link rel="stylesheet" href="css/main.css">
+    <script type="module" src="js/learn.js"></script>
+
+    <!-- External Resources -->
+    <script src="https://kit.fontawesome.com/6f9bb4c3bd.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="header" class="skeleton-v1"></div>
+
+    <main class="dashboard-main-container row-left gap-4 align-start">
+        <p>stuff goes here.</p>
+    </main>
+
+    <div id="footer" class="skeleton-v1"></div>
+</body>
+
+</html>

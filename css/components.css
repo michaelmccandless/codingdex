@@ -213,9 +213,11 @@ button:active, .btn:active {
 
     border-radius: 0;
 }
-
-.topbar h1 {
-    margin-bottom: 0rem;
+.topbar-logo {
+    text-decoration: none;
+}
+.topbar-logo:hover {
+    text-decoration: none;
 }
 
 .footer {
@@ -401,12 +403,25 @@ button:active, .btn:active {
 .padding-2 {padding: 1rem;}
 .padding-3 {padding: 2rem;}
 
-/*.material-icons-outlined {font-size: 1em;}*/
+.skeleton-v1 {min-height: 100px;}
+.skeleton-v2 {min-height: 250px;}
+.skeleton-v3 {min-height: 300px;}
+.skeleton-v4 {min-height: 550px;}
+.skeleton-v5 {min-height: 600px;}
+
+.skeleton-h1 {min-width: 100px;}
+.skeleton-h2 {min-width: 150px;}
+.skeleton-h3 {min-width: 300px;}
+.skeleton-h4 {min-width: 500px;}
+.skeleton-h5 {min-width: 600px;}
+
 .text-xsmall {font-size: 0.75rem;}
 .text-small {font-size: 0.875rem;}
 .text-medium {font-size: 1rem;}
 .text-large {font-size: 1.125rem;}
 .text-xlarge {font-size: 1.5rem;}
+.text-xxlarge {font-size: 2rem;}
+.text-xxxlarge {font-size: 3rem;}
 
 .text-semibold {font-weight: 600;}
 .text-bold {font-weight: bold;}
